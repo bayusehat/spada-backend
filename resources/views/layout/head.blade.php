@@ -9,12 +9,23 @@
 	<link rel="icon" href="images/favicon.png?v=2" type="image/png" />
     <meta name="description" content="Backend UI" />
     <meta name="author" content="SPADA Digital Consulting" />
-	<title>SPADA Backend UI | {{ $data['title'] }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
+    <title>SPADA Backend UI | {{ $data['title'] }}</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"/>
 	<link rel="stylesheet" href="{{ asset('assets/css/normalize.css') }}" type="text/css" media="screen">
 	<link rel="stylesheet" href="{{ asset('assets/css/grid.css') }}" type="text/css" media="screen">
 	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" media="screen">
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}" type="text/css" media="screen">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.js"></script>
+    <style>
+        .card{
+            color:black;background:white;padding:15px;border-radius:10px
+        }
+    </style>
 </head>
 <body>
     <?php
