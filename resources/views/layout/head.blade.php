@@ -25,6 +25,18 @@
         .card{
             color:black;background:white;padding:15px;border-radius:10px
         }
+        .btn-warning{
+            color: black !important;
+        }
+        .btn-success{
+            color: white !important;
+        }
+        label{
+            color: black;
+        }
+        .modal-dialog {
+            padding-top: 10%;
+        }
     </style>
 </head>
 <body>
@@ -42,11 +54,11 @@
                         <a href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                     @php
-                        $menuParent = Menu::where(['menuParent' => 0, 'menuDelete' => 0])->orderBy('menuName','asc')->get();
+                        $menuParent = Menu::where(['menuParent' => 0])->orderBy('menuName','asc')->get();
                     @endphp
                     @foreach ($menuParent as $mp)
                         @php
-                            $subMenu = Menu::where(['menuParent' => $mp->menuId, 'menuDelete' => 0])->orderBy('menuName','asc')->get();
+                            $subMenu = Menu::where(['menuParent' => $mp->menuId])->orderBy('menuName','asc')->get();
                         @endphp
                         <li class="menu-item">
                             <a href="#"><i class="fas {{ $mp->menuIcon }}"></i>{{ $mp->menuName }}</a>
@@ -66,10 +78,10 @@
             <div id="top-panel">
                 <div class="top-wrapper">
                     <div id="page-title" class="left">
-                        <h1>Dashboard</h1>
+                        <h1>{{ $data['title'] }}</h1>
                     </div>
                     <div id="user-account" class="right">
-                        <a href="#"><span>Jane Doe</span><img src="images/user.png"></a>
+                        <a href="#"><span>{{ session('adminName') }}</span><img src="images/user.png"></a>
                     </div>
                     <div id="notification" class="right">
                         <a href="#"><i class="fas fa-bell"></i></a>

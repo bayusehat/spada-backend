@@ -29,6 +29,9 @@ class ConfigController extends Controller
             'cofigWebName' => 'required',
             'configTitle'  => 'required',
             'configOfficeHour' => 'required',
+            'configPhone' => 'required',
+            'configAddress' => 'required',
+            'configEmail' => 'required'
         ];
 
         $isValid = Validator::make($request->all(), $rules);
@@ -40,15 +43,17 @@ class ConfigController extends Controller
                 'configWebName' => $request->input('configWebName'),
                 'configTitle' => $request->input('configTitle'),
                 'configOfficeHour' => $request->input('configOfficeHour'),
+                'configPhone' => $request->input('configPhone'),
+                'configAddress' => $request->input('configAddress'),
+                'configEmail' => $request->input('configEmail'),
                 'configDescription' => $request->input('configDescription'),
-                'configCreate' => date('Y-m-d H:i:s'),
                 'configUpdate' => date('Y-m-d H:i:s')
             ];
         
             $update = Config::where('configId',$id)->update($data);
 
             if($update){
-                return redirect()->back()->with('sucess','Config berhasil diperbarui');
+                return redirect()->back()->with('success','Config berhasil diperbarui');
             }else{
                 return redirect()->back()->with('error','Terjadi kesalahan, config gagal diperbarui');
             }

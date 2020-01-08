@@ -38,15 +38,16 @@ class AuthController extends Controller
                     $session = [
                         'adminName' => $data->adminName,
                         'adminId'   => $data->adminId,
+                        'roleId'    => $data->roleId,
                         'token'     => Str::random(60)
                     ];
                     session($session);
-                    return redirect('/');
+                    return redirect('admin/dashboard');
                 }else{
-                    return redirect()->back()->with('error','Password yang anda masukan salah!!');
+                    return redirect()->back()->with('error','Password yang anda masukan salah!');
                 }
             }else{
-                return redirect()->back()->with('error','user tidak ditemukan!!');
+                return redirect()->back()->with('error','user tidak ditemukan!');
             }
         }
     }

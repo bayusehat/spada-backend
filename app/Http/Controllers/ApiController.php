@@ -34,7 +34,7 @@ class ApiController extends Controller
                'productId'          => $pr->productId,
                'productName'        => $pr->productName,
                'productDescription' => $pr->productDescription,
-               'productImage'       => asset('assets/images/product/'.$pr->productImage),
+               'productImage'       => asset('data/product/'.$pr->productImage),
                'categoryId'         => $pr->categoryId,
                'categoryName'       => $pr->categoryName
            ];
@@ -75,7 +75,7 @@ class ApiController extends Controller
                 'productId'          => $pr->productId,
                 'productName'        => $pr->productName,
                 'productDescription' => $pr->productDescription,
-                'productImage'       => asset('assets/images/product/'.$pr->productImage),
+                'productImage'       => asset('data/product/'.$pr->productImage),
                 'categoryId'         => $pr->categoryId,
                 'categoryName'       => $pr->categoryName
             ];
